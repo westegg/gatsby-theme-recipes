@@ -41,7 +41,7 @@ module.exports = ({
         resolve: `gatsby-source-filesystem`,
         options: {
           name: "pages",
-          path: `${__dirname}/src/pages/`
+          path: `${__dirname}/src/pages`
         }
       },
       {
@@ -59,6 +59,7 @@ module.exports = ({
             default: require.resolve("./src/components/MarkdownPagesLayout.js"),
             pages: require.resolve("./src/components/MarkdownLayout.js")
           },
+          extensions: [`.md`, `.mdx`],
           gatsbyRemarkPlugins: [
             {
               resolve: `gatsby-remark-images`,
