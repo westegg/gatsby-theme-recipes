@@ -59,7 +59,7 @@ exports.createPages = async (
   // tags pages
   const tagsResult = await graphql(`
     query {
-      allMdx {
+      allMdx(sort: { fields: [frontmatter___tags], order: DESC }) {
         group(field: frontmatter___tags) {
           tag: fieldValue
           totalCount
